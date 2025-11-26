@@ -1,8 +1,40 @@
-<h2>🛒 React Product Listing – Technical Round Assignment</h2>
+# 🛒 React Product Listing – Technical Round Assignment
 
-This project is a mini e-commerce product listing interface built using React.
-It fetches products from the public API:
+This project is a **mini e-commerce product listing interface** built using **React**.  
+It fetches products from the public API : **https://dummyjson.com/products**<br>
+and hosted with vercel at:
 
-👉 https://dummyjson.com/products
+https://product-listing-silk.vercel.app/
 
-and displays them with basic shopping functionality such as search, filters, sorting, adding to cart, and a cart sidebar.
+
+The UI displays products with basic shopping functionalities such as:
+- Product listing  
+- Search  
+- Filters  
+- Sorting  
+- Add to cart  
+- Cart sidebar  
+
+---
+
+## 🚀 Setup Instructions
+
+### 1️⃣ Clone the Repository
+```bash
+git clone https://github.com/your-username/product-listing-react.git
+cd product-listing-react
+```
+
+### 2️⃣ Install Dependencies
+```bash
+npm install
+```
+
+### 3️⃣ Run the Development Server
+```bash
+npm run dev
+```
+
+Your app should now be running at **http://localhost:5173/** (Vite default).
+
+---
