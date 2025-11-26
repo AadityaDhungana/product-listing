@@ -4,51 +4,72 @@ const ProductCard = ({ product, onAddToCart, cart }) => {
   const isAdded = cart.some((item) => item.id === product.id);
 
   return (
-    <div className="
-      border rounded-xl shadow-sm bg-base-100 overflow-hidden 
-      hover:shadow-md transition-all duration-200
-      hover:-translate-y-1
-    ">
-
+    <div
+      className="
+        rounded-2xl border border-gray-200 
+        shadow-lg bg-white overflow-hidden 
+        hover:shadow-xl hover:-translate-y-2 
+        transition-all duration-300
+      "
+    >
+      {/* Image */}
       <div className="relative">
         <img
           src={product.thumbnail}
           alt={product.title}
-          className="w-full h-36 object-cover"
+          className="w-full h-40 object-cover"
         />
+
+        {/* Category Badge */}
+        <span
+          className="
+            absolute top-2 left-2 
+            bg-gradient-to-r from-indigo-500 to-purple-500
+            text-white text-xs font-semibold
+            px-3 py-1 rounded-full shadow-md
+          "
+        >
+          {product.category}
+        </span>
       </div>
 
-
-      <div className="p-3">
- 
-        <h3 className="font-semibold text-sm line-clamp-2">
+      {/* Content */}
+      <div className="p-4">
+        <h3 className="font-semibold text-sm text-gray-800 line-clamp-2">
           {product.title}
         </h3>
 
-        <p className="text-xs text-gray-500 capitalize mt-1">
-          {product.category}
-        </p>
-
-        <p className="text-primary font-bold mt-1 text-sm">
+        {/* Price */}
+        <p
+          className="
+            text-lg font-bold mt-2 
+            bg-gradient-to-r from-blue-600 to-purple-600 
+            bg-clip-text text-transparent
+          "
+        >
           ${product.price}
         </p>
 
+        {/* Button */}
         {isAdded ? (
           <button
             className="
-              btn btn-sm w-full mt-3 
-              bg-green-500 text-white hover:bg-green-600 
-              flex items-center justify-center gap-1
+              w-full mt-3 py-2 rounded-xl text-white 
+              bg-green-500 flex items-center justify-center gap-2 
+              cursor-not-allowed
             "
             disabled
           >
-            <FiCheck size={16} /> Added
+            <FiCheck size={16} /> Added to Cart
           </button>
         ) : (
           <button
             className="
-              btn btn-sm btn-primary w-full mt-3 
-              flex items-center justify-center gap-1
+              w-full mt-3 py-2 rounded-xl text-white 
+              bg-gradient-to-r from-blue-600 to-purple-600
+              hover:opacity-90 
+              flex items-center justify-center gap-2
+              transition
             "
             onClick={() => onAddToCart(product)}
           >
